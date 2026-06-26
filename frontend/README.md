@@ -293,10 +293,6 @@ GROQ_API_KEY=your_groq_api_key
 
 # 📸 Screenshots
 
-Add screenshots here
-
-```
-Home Page
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3bf4b3ee-31ef-4732-a1b3-db48668ee9cd" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ded84839-2a17-4115-b972-d8d536f220d4" />
 
@@ -305,7 +301,7 @@ Home Page
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cdea7aed-da6c-4a35-9932-80bd6b1e5f6a" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f0ee9258-0575-474f-860c-7a2cc6b383ed" />
 
-```
+
 
 ---
 
