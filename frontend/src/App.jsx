@@ -10,6 +10,7 @@ import Routine from "./pages/Routine";
 import Products from "./pages/Products";
 import Profile from "./pages/Profile";
 import Assistant from "./pages/Assistant";
+import SkinAnalysis from "./pages/SkinAnalysis";
 
 function App() {
   return (
@@ -78,7 +79,14 @@ function App() {
             </ProtectedRoute>
           }
         />
-       
+        <Route
+          path="/skin-analysis"
+          element={
+            <ProtectedRoute>
+              <SkinAnalysis />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );

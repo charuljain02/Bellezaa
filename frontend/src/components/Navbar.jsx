@@ -27,6 +27,7 @@ const Navbar = () => {
     { to: "/", label: "Home" },
     { to: "/quiz", label: "Glow Quiz" },
     { to: "/routine", label: "Routine" },
+      { to: "/skin-analysis", label: "Skin Scan" },   // add this line
     { to: "/products", label: "Products" },
     { to: "/assistant", label: "AI Assistant" },
   ];
