@@ -12,7 +12,6 @@ import chatRoutes from "./routes/chatRoutes.js";
 import skinAnalysisRoutes from "./routes/skinAnalysisRoutes.js";   // add this
 dotenv.config();
 
-// Fix MongoDB SRV DNS issue on your system
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 const app = express();

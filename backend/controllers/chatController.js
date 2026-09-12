@@ -1,6 +1,6 @@
 import ChatHistory from "../models/ChatHistory.js";
-import { askGroq }
-from "../config/groq.js";
+import { askGemini }
+from "../config/gemini.js";
 
 export const chatWithAssistant =
 async (req, res) => {
@@ -10,7 +10,7 @@ async (req, res) => {
     const { message } = req.body;
 
     const reply =
-      await askGroq(message);
+      await askGemini(message);
 
     const chat =
       await ChatHistory.create({

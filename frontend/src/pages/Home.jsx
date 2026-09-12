@@ -7,6 +7,7 @@ import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
 import frontImg from "../assets/front.png";
 import bg1 from "../assets/front2.png";
 import bg2 from "../assets/diva.png";
+import bg3 from "../assets/beauty.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -49,9 +50,9 @@ const Home = () => {
         display: "flex",
         flexDirection: isMobile ? "column" : "row",
         alignItems: "center",
-        justifyContent: "space-between",
-        gap: isMobile ? "40px" : "48px",
-        padding: isMobile ? "100px 20px 60px" : "120px 24px 80px",
+        justify: "space-between",
+        gap: isMobile ? "32px" : "48px",
+        padding: isMobile ? "90px 20px 40px" : "120px 24px 80px",
         maxWidth: 1200,
         margin: "0 auto",
         position: "relative",
@@ -162,12 +163,12 @@ const Home = () => {
           <motion.div
             variants={fadeUp} initial="hidden" animate="visible" custom={4}
             style={{
-              display: "flex", gap: isMobile ? 20 : 32, marginTop: isMobile ? 40 : 56,
+              display: "flex", gap: isMobile ? 20 : 32, marginTop: isMobile ? 36 : 56,
               flexWrap: "wrap", justifyContent: isMobile ? "center" : "flex-start",
             }}
           >
             {stats.map((s, i) => (
-              <div key={i} style={{ textAlign: isMobile ? "center" : "left", minWidth: isMobile ? "80px" : "auto" }}>
+              <div key={i} style={{ textAlign: isMobile ? "center" : "left", minWidth: isMobile ? "70px" : "auto" }}>
                 <div style={{ fontFamily: "'Playfair Display', serif", fontSize: isMobile ? 22 : 26, fontWeight: 700, color: "#2C1810" }}>
                   {s.number}
                 </div>
@@ -196,9 +197,9 @@ const Home = () => {
         >
           <div style={{
             width: "100%", 
-            maxWidth: isMobile ? "280px" : "380px", 
-            height: isMobile ? "350px" : "480px",
-            borderRadius: isMobile ? "80px 24px 80px 24px" : "140px 35px 140px 35px", 
+            maxWidth: isMobile ? "260px" : "380px", 
+            height: isMobile ? "320px" : "480px",
+            borderRadius: isMobile ? "60px 24px 60px 24px" : "140px 35px 140px 35px", 
             overflow: "hidden",
             boxShadow: "0 24px 48px rgba(44,24,16,0.1)",
             border: "6px solid rgba(255,255,255,0.5)",
@@ -210,10 +211,10 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section style={{ padding: isMobile ? "60px 16px" : "100px 24px", maxWidth: 1200, margin: "0 auto" }}>
+      <section style={{ padding: isMobile ? "40px 20px" : "80px 24px", maxWidth: 1200, margin: "0 auto" }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} style={{ textAlign: "center", marginBottom: isMobile ? 36 : 60 }}
+          viewport={{ once: true }} style={{ textAlign: "center", marginBottom: isMobile ? 32 : 60 }}
         >
           <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, letterSpacing: 2, textTransform: "uppercase", color: "#D4857A", fontWeight: 600, marginBottom: 8 }}>
             What we offer
@@ -223,7 +224,7 @@ const Home = () => {
           </h2>
         </motion.div>
 
-        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(260px, 1fr))", gap: isMobile ? 16 : 28 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(240px, 1fr))", gap: isMobile ? 16 : 24 }}>
           {features.map((f, i) => (
             <motion.div
               key={i}
@@ -238,27 +239,27 @@ const Home = () => {
                   style={{
                     background: "rgba(255,255,255,0.65)", backdropFilter: "blur(20px)",
                     border: "1px solid rgba(234,168,154,0.2)", borderRadius: 24,
-                    padding: isMobile ? "24px 20px" : "36px 30px",
+                    padding: isMobile ? "20px" : "32px 24px",
                     display: "flex", flexDirection: isMobile ? "row" : "column",
                     alignItems: isMobile ? "center" : "flex-start",
                     gap: isMobile ? 16 : 0,
-                    cursor: "pointer",
+                    cursor: "pointer", height: "100%", boxSizing: "border-box"
                   }}
                 >
                   <div style={{
-                    width: 52, height: 52, borderRadius: 16, flexShrink: 0,
+                    width: 48, height: 48, borderRadius: 16, flexShrink: 0,
                     background: "white", display: "flex", alignItems: "center", justifyContent: "center",
                     boxShadow: "0 8px 20px rgba(212,133,122,0.1)",
-                    marginBottom: isMobile ? 0 : 24,
+                    marginBottom: isMobile ? 0 : 20,
                   }}>
                     {f.icon}
                   </div>
                   <div>
-                    <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: isMobile ? 17 : 20, fontWeight: 600, color: "#2C1810", margin: "0 0 6px" }}>
+                    <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: isMobile ? 16 : 19, fontWeight: 600, color: "#2C1810", margin: "0 0 6px" }}>
                       {f.title}
                     </h3>
                     {!isMobile && (
-                      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, lineHeight: 1.65, color: "#6B3D35", margin: "0 0 24px", fontWeight: 300 }}>
+                      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, lineHeight: 1.6, color: "#6B3D35", margin: "0 0 20px", fontWeight: 300 }}>
                         {f.desc}
                       </p>
                     )}
@@ -274,39 +275,145 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Left Right Image Section */}
-      <section style={{ padding: isMobile ? "60px 16px" : "100px 24px", maxWidth: 1200, margin: "0 auto" }}>
-
-        {/* Row 1 - Routine */}
+      {/* Alternating Showcase Section */}
+      <section style={{ padding: isMobile ? "40px 20px" : "80px 24px", maxWidth: 1200, margin: "0 auto" }}>
+        
+        {/* Row 1 - AI Assistant (Image Right on Desktop) */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           style={{
-            display: "flex", flexDirection: isMobile ? "column" : "row",
-            alignItems: "center", gap: isMobile ? 32 : 64,
+            display: "flex",
+            flexDirection: isMobile ? "column" : "row-reverse",
+            alignItems: "center",
+            gap: isMobile ? 24 : 64,
             marginBottom: isMobile ? 60 : 100,
           }}
         >
           <div style={{
-            flex: "1 1 40%", width: "100%", maxWidth: isMobile ? "280px" : "360px",
+            flex: "1 1 40%", width: "100%", maxWidth: isMobile ? "260px" : "360px",
             borderRadius: 32, overflow: "hidden",
             boxShadow: "0 24px 48px rgba(44,24,16,0.08)",
             border: "6px solid rgba(255,255,255,0.7)",
             background: "#FFF5F0"
           }}>
-            <img src={bg1} alt="Skincare Routine" style={{ width: "100%", height: isMobile ? "280px" : "360px", objectFit: "contain", display: "block" }} />
+            <img src={bg2} alt="AI Beauty Assistant" style={{ width: "100%", height: isMobile ? "260px" : "360px", objectFit: "contain", display: "block" }} />
+          </div>
+
+          <div style={{ flex: "1 1 60%", textAlign: isMobile ? "center" : "left", width: "100%" }}>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", color: "#D4857A", marginBottom: 12 }}>
+              AI Powered
+            </div>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: isMobile ? "24px" : "clamp(28px, 3vw, 40px)", fontWeight: 700, color: "#2C1810", margin: "0 0 16px", lineHeight: 1.2 }}>
+              Beauty Advice at Your <em style={{ color: "#D4857A", fontStyle: "italic" }}>Fingertips</em>
+            </h2>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 14 : 15, lineHeight: 1.75, color: "#6B3D35", fontWeight: 300, marginBottom: 24 }}>
+              Chat with your personal AI beauty assistant anytime. Get instant answers
+              about ingredients, routines, and product recommendations — all for free.
+            </p>
+            <Link to="/assistant" style={{ textDecoration: "none" }}>
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.98 }}
+                style={{
+                  padding: "12px 28px", fontSize: 14, fontWeight: 600,
+                  fontFamily: "'DM Sans', sans-serif", color: "white",
+                  background: "linear-gradient(135deg, #EAA89A, #D4857A)",
+                  border: "none", borderRadius: 50, cursor: "pointer",
+                  display: "inline-flex", alignItems: "center", gap: 8,
+                }}
+              >
+                Chat with AI <ArrowRight size={14} />
+              </motion.button>
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Row 2 - Computer Vision (Image Left on Desktop) */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          style={{
+            display: "flex", 
+            flexDirection: isMobile ? "column" : "row",
+            alignItems: "center", 
+            gap: isMobile ? 24 : 64,
+            marginBottom: isMobile ? 60 : 100,
+          }}
+        >
+          <div style={{
+            flex: "1 1 40%", width: "100%", maxWidth: isMobile ? "260px" : "360px",
+            borderRadius: 32, overflow: "hidden",
+            boxShadow: "0 24px 48px rgba(44,24,16,0.08)",
+            border: "6px solid rgba(255,255,255,0.7)",
+            background: "#FFF5F0"
+          }}>
+            <img src={bg3} alt="Instant AI Scan" style={{ width: "100%", height: isMobile ? "260px" : "360px", objectFit: "contain", display: "block" }} />
+          </div>
+
+          <div style={{ flex: "1 1 60%", textAlign: isMobile ? "center" : "left", width: "100%" }}>
+            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", color: "#D4857A", marginBottom: 12 }}>
+              Computer Vision AI
+            </div>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: isMobile ? "24px" : "clamp(28px, 3vw, 40px)", fontWeight: 700, color: "#2C1810", margin: "0 0 16px", lineHeight: 1.2 }}>
+              Instant <em style={{ color: "#D4857A", fontStyle: "italic" }}>Skin Scan</em>
+            </h2>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 14 : 15, lineHeight: 1.75, color: "#6B3D35", fontWeight: 300, marginBottom: 24 }}>
+              Upload a clear photo to evaluate overall skin health, target key facial zones, and identify concerns like acne, dark circles, and texture — evaluated instantly.
+            </p>
+            <Link to="/routine" style={{ textDecoration: "none" }}>
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.98 }}
+                style={{
+                  padding: "12px 28px", fontSize: 14, fontWeight: 600,
+                  fontFamily: "'DM Sans', sans-serif", color: "white",
+                  background: "linear-gradient(135deg, #EAA89A, #D4857A)",
+                  border: "none", borderRadius: 50, cursor: "pointer",
+                  display: "inline-flex", alignItems: "center", gap: 8,
+                }}
+              >
+                Scan With AI <ArrowRight size={14} />
+              </motion.button>
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* Row 3 - Personal Routine (Image Right on Desktop) */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          style={{
+            display: "flex", 
+            flexDirection: isMobile ? "column" : "row-reverse",
+            alignItems: "center", 
+            gap: isMobile ? 24 : 64,
+          }}
+        >
+          <div style={{
+            flex: "1 1 40%", width: "100%", maxWidth: isMobile ? "260px" : "360px",
+            borderRadius: 32, overflow: "hidden",
+            boxShadow: "0 24px 48px rgba(44,24,16,0.08)",
+            border: "6px solid rgba(255,255,255,0.7)",
+            background: "#FFF5F0"
+          }}>
+            <img src={bg1} alt="Skincare Routine" style={{ width: "100%", height: isMobile ? "260px" : "360px", objectFit: "contain", display: "block" }} />
           </div>
 
           <div style={{ flex: "1 1 60%", textAlign: isMobile ? "center" : "left", width: "100%" }}>
             <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", color: "#D4857A", marginBottom: 12 }}>
               Personalized For You
             </div>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: isMobile ? "26px" : "clamp(28px, 3vw, 40px)", fontWeight: 700, color: "#2C1810", margin: "0 0 20px", lineHeight: 1.2 }}>
+            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: isMobile ? "24px" : "clamp(28px, 3vw, 40px)", fontWeight: 700, color: "#2C1810", margin: "0 0 16px", lineHeight: 1.2 }}>
               Your Skin Deserves a <em style={{ color: "#D4857A", fontStyle: "italic" }}>Ritual</em>
             </h2>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 14 : 15, lineHeight: 1.8, color: "#6B3D35", fontWeight: 300, marginBottom: 32 }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 14 : 15, lineHeight: 1.75, color: "#6B3D35", fontWeight: 300, marginBottom: 24 }}>
               Build a morning and night routine tailored to your exact skin type and concerns.
               No guesswork — just science-backed steps that actually work for your skin.
             </p>
@@ -315,7 +422,7 @@ const Home = () => {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.98 }}
                 style={{
-                  padding: "13px 32px", fontSize: 14, fontWeight: 600,
+                  padding: "12px 28px", fontSize: 14, fontWeight: 600,
                   fontFamily: "'DM Sans', sans-serif", color: "white",
                   background: "linear-gradient(135deg, #EAA89A, #D4857A)",
                   border: "none", borderRadius: 50, cursor: "pointer",
@@ -328,60 +435,10 @@ const Home = () => {
           </div>
         </motion.div>
 
-        {/* Row 2 - AI Assistant */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          style={{
-            display: "flex",
-            flexDirection: isMobile ? "column" : "row-reverse",
-            alignItems: "center", gap: isMobile ? 32 : 64,
-          }}
-        >
-          <div style={{
-            flex: "1 1 40%", width: "100%", maxWidth: isMobile ? "280px" : "360px",
-            borderRadius: 32, overflow: "hidden",
-            boxShadow: "0 24px 48px rgba(44,24,16,0.08)",
-            border: "6px solid rgba(255,255,255,0.7)",
-            background: "#FFF5F0"
-          }}>
-            <img src={bg2} alt="AI Beauty Assistant" style={{ width: "100%", height: isMobile ? "280px" : "360px", objectFit: "contain", display: "block" }} />
-          </div>
-
-          <div style={{ flex: "1 1 60%", textAlign: isMobile ? "center" : "left", width: "100%" }}>
-            <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, letterSpacing: 2, textTransform: "uppercase", color: "#D4857A", marginBottom: 12 }}>
-              AI Powered
-            </div>
-            <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: isMobile ? "26px" : "clamp(28px, 3vw, 40px)", fontWeight: 700, color: "#2C1810", margin: "0 0 20px", lineHeight: 1.2 }}>
-              Beauty Advice at Your <em style={{ color: "#D4857A", fontStyle: "italic" }}>Fingertips</em>
-            </h2>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: isMobile ? 14 : 15, lineHeight: 1.8, color: "#6B3D35", fontWeight: 300, marginBottom: 32 }}>
-              Chat with your personal AI beauty assistant anytime. Get instant answers
-              about ingredients, routines, and product recommendations — all for free.
-            </p>
-            <Link to="/assistant" style={{ textDecoration: "none" }}>
-              <motion.button
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.98 }}
-                style={{
-                  padding: "13px 32px", fontSize: 14, fontWeight: 600,
-                  fontFamily: "'DM Sans', sans-serif", color: "white",
-                  background: "linear-gradient(135deg, #EAA89A, #D4857A)",
-                  border: "none", borderRadius: 50, cursor: "pointer",
-                  display: "inline-flex", alignItems: "center", gap: 8,
-                }}
-              >
-                Chat with AI <ArrowRight size={14} />
-              </motion.button>
-            </Link>
-          </div>
-        </motion.div>
       </section>
 
       {/* Footer Section */}
-      <footer style={{ borderTop: "1px solid rgba(234,168,154,0.3)", padding: isMobile ? "40px 16px 24px" : "60px 24px 30px", background: "rgba(255,255,255,0.3)" }}>
+      <footer style={{ borderTop: "1px solid rgba(234,168,154,0.3)", padding: isMobile ? "40px 20px 24px" : "60px 24px 30px", background: "rgba(255,255,255,0.3)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: 32, marginBottom: 32 }}>
           <div style={{ maxWidth: isMobile ? "100%" : 300, width: isMobile ? "100%" : "auto" }}>
             <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 700, color: "#2C1810", margin: "0 0 12px" }}>
@@ -392,7 +449,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div style={{ display: "flex", gap: isMobile ? 40 : 60, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: isMobile ? 32 : 60, flexWrap: "wrap" }}>
             <div>
               <h4 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, textTransform: "uppercase", letterSpacing: 1, color: "#2C1810", fontWeight: 600, marginBottom: 16 }}>Platform</h4>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
